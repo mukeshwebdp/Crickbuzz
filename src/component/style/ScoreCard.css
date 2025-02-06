@@ -1,0 +1,68 @@
+
+.score-card{
+    
+    color: #fff;
+    margin: 0 auto;
+    width: 83%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    .card{
+        padding: 5px;
+        min-width: 330px;
+        height: 218px;
+        border-radius: 0.3rem;
+        
+        background: #000;
+        .box-1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p{
+                font-size: 14px;
+            }
+            label{
+                padding: 4px 10px;
+                border-radius: 5px;
+                background: #0363e4;
+            }
+        }
+        h4{
+            margin-top: 1.2rem;
+            word-wrap: break-word;
+            width: 280px;
+        }
+        .flag{
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .india > img{
+                width: 3rem;
+            }
+            .india > p{
+                font-size: 1.2rem;
+            }
+            .number{
+                margin-top: 5px;
+            }
+
+            .pakistan > img{
+                width: 3rem;
+            }
+
+            .pakistan > p{
+                font-size: 1.2rem;
+            }
+            
+
+
+        }
+       .red{
+        margin-top: 1rem;
+        color: red;
+       } 
+    }
+    
+}

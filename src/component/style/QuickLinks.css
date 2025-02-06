@@ -1,0 +1,40 @@
+.QuickLinks{
+    max-width: 83%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    white-space: nowrap;
+    .link-box-1 {
+        background: white;
+        border-radius: 5px;
+        p{
+            font-size: 1.5rem;
+            color: #0363e4;
+            padding: 1rem 2rem ;
+        }
+    }
+    .link-box-2{
+        display: flex;
+        gap: 1rem;
+        overflow: auto;
+        scrollbar-width: none;
+        .card{
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: #0363e4;
+            padding: 0.8rem 1.8rem ;
+            border-radius: 5px;
+
+            svg{
+                width: 1.8rem;
+            }
+            p{
+                color: #fff;
+                font-size: 1.3rem;
+            }
+        }
+    }
+}

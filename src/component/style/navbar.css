@@ -1,0 +1,26 @@
+.navbar{
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #0363E4;
+    color: #fff;
+}
+
+.menu ul {
+    display: flex;
+    gap: 2.5rem;
+
+    li{
+        list-style: none;
+    }
+
+}
+
+.search {
+    display: flex;
+    gap: 2rem;
+    .search-icon{
+        width: 1rem;
+    }
+}
