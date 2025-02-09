@@ -1,36 +1,55 @@
-.video-container{
+.video-box{
     max-width: 81%;
     background: white;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    border-radius: 5px;
     margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    .video-heading{
-        border-bottom: 1px solid #0363e4;
-       p{
-        font-size: 1.5rem;
-        color: #0363e4;
-       } 
-    }
-    .card-info{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        display: flex;
-        gap: 1rem;
 
-        .card{
-            width: 300px;
-            height: 200px;
-            position: relative;
-            border-radius: 5px;
-            p{
-                
-                color: rgb(174, 2, 2);
-                position: absolute;
-                left: 10px;
-                bottom: 0;
-            }
+    position: relative;
+    a{
+        display: block;
+        float: right;
+        background: #0363e4;
+        padding: 0.3rem 0.8rem;
+
+        color: #fff;
+        border-start-end-radius: 10px;
+        border-start-start-radius: 10px;
+        border-end-start-radius: 10px;
+        border-end-end-radius: 10px;
+        margin-top: 1rem;
+    }
+    .new-video{
+        padding: 1rem 0rem;
+        border-bottom: 1.5px solid #0363e4;
+        margin-bottom: 1.8rem;
+        
+        p{
+            font-size: 1.5rem;
+            color: #0363e4;   
         }
     }
+    
+    .card-box{
+        display: flex;
+        
+        .video-info{
+            min-width: 300px;
+            height: 200px;
+            position: relative;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
 
+                p{
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding-left: 0.4rem;
+                    position: absolute;
+                    bottom: 0.5rem;
+        
+                }
+            }
+    }
 }

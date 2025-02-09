@@ -1,6 +1,7 @@
 
 import './App.css'
 import Footer from './component/footer'
+import MatchInfo from './component/MatchInfo'
 import Navbar from './component/Navbar'
 import QuickLinks from './component/QuickLinks'
 import ScoreCard from './component/ScoreCard'
@@ -17,6 +18,7 @@ function App() {
           <QuickLinks/>
           <TopStories />
           <Video />
+          <MatchInfo />
         </div>
       <Footer />
    </>
