@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, version } from 'react'
 import './style/topStories.css'
 
 
 function TopStories() {
+    const [view, setView] =useState('')
+console.log(view)
     const [data, setData] = useState({
         img: 'cricket.png',
         info: 'CT25: ICC meet adjourned after a brief discussion; to be reconvened soon'
@@ -15,9 +17,9 @@ return (
                 <p>Top Stories</p>
             </div>
 
-            <div className="stories-info">
+            <div className={`stories-info ${view}`}>
                 {[...Array(4)].map((_, i) => (
-                    <div key={i} className="card">
+                    <div key={`card-${i}`} className="card">
                         <div className="img">
                             <img src={data.img} alt="" />
                         </div>
@@ -28,7 +30,7 @@ return (
                     </div>
                 ))}
             </div>
-            <p className='left'>View All</p>
+            <button className='left' onClick={() => setView(view ? '' : 'view')}>View All</button>
         </div>
     </>
 )

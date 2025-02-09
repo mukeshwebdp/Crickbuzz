@@ -7,12 +7,13 @@
     margin-top: 1.5rem;
 
     position: relative;
-    a{
+    button{
         display: block;
         float: right;
         background: #0363e4;
         padding: 0.3rem 0.8rem;
-
+        border: none;
+        cursor: pointer;
         color: #fff;
         border-start-end-radius: 10px;
         border-start-start-radius: 10px;

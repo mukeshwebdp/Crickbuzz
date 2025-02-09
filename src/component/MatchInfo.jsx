@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './style/match-info.css'
 function MatchInfo() {
+    const [view, setView] = useState('')
     const [matchData, setMatchData] = useState({
         img: 'match-info.png',
         title: 'ILT20 2025 begin on january 11 amid jam-packed schedule',
@@ -13,12 +14,13 @@ function MatchInfo() {
                 <p>Match Info</p>
             </div>
 
-            <div className="match-info-2 slider">
-                {[...Array(5)].map((_,index)=>(
+            <div className={`match-info-2 slider ${view}`}>
+                {[...Array(6)].map((_,index)=>(
                     <div className="match-box" key={index}>
                     <div className="img">
                         <img src={matchData.img} alt="Match-img" />
                     </div>
+                   
                     <div className="match-box-info">
                         <div className="title">
                             <h3>{matchData.title}</h3>
@@ -31,6 +33,7 @@ function MatchInfo() {
                 
                 
             </div>
+            <button onClick={() => setView(view ? '' : 'view')}>View All</button>
         </div>
     </>
   )

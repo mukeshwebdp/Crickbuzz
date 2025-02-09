@@ -57,12 +57,13 @@
         
         background: #0363e4;
         color: #fff;
+        border: none;
         padding: 0.3rem 0.8rem;
         border-start-end-radius: 10px;
         border-start-start-radius: 10px;
         border-end-start-radius: 10px;
         border-end-end-radius: 10px;
         float: right;
-        
+        cursor: pointer;
     }
 }
