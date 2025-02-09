@@ -22,7 +22,7 @@ function TopTeam() {
             </div>
             <div className="flag-info slider">
                 {flag.map((item,index)=> (
-                    <div className="flag-card">
+                    <div className="flag-card" key={index}>
                     <div className="img">
                         <img src={`./flag/${item.flag}`} alt={item.flag} />
                         <p>{item.country}</p>
