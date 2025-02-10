@@ -56,8 +56,6 @@
                 font-size: 1.2rem;
             }
             
-
-
         }
        .red{
         margin-top: 1rem;
@@ -66,3 +64,9 @@
     }
     
 }
+
+@media (max-width: 768px) {
+    .card{
+        min-width: 300px;
+    }
+  }

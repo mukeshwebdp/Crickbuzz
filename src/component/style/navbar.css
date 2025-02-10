@@ -16,9 +16,11 @@
     }
 
     .subNav  ul{
-        display: none;
+        display:none;
         gap: 0;
-        padding-top: 1.5rem;
+        
+        top: 1rem;
+        padding-top: 1rem;
         border-radius: 5px;
         width: 6rem;
         position: absolute;
@@ -26,6 +28,10 @@
         background: #0363E4;
         li{
             padding: 0.2rem 0.5rem;
+            &:hover{
+                border-radius: 5px;
+                border-bottom: 1px solid #fff;
+            }
         }
         
     }
@@ -45,4 +51,25 @@
     }
 }
 
+.menu-bar{
+    position: relative;
+}
 
+/* mobile responsive */
+
+@media (max-width: 780px) {
+    .navbar{
+        justify-content: space-between;
+        .menu{
+            display: none;
+        }
+    }
+  }
+
+  /* laptop responsive */
+
+  @media (min-width: 780px) {
+    .menu-bar {
+      display: none;
+    }
+  }

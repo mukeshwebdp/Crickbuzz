@@ -48,3 +48,18 @@
         }
     }
 }
+
+@media (max-width: 870px) {
+    .Ads-info{
+        flex-direction: column-reverse;
+        justify-content: center;
+        .card-1{
+            width: 80%;
+            align-items: center;
+        }
+        .card-2{
+            width: 80%;
+            margin-left: 2rem;
+        }
+    }
+  }

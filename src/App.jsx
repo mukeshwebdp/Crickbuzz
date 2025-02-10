@@ -1,7 +1,8 @@
 
 import './App.css'
 import Ads from './component/Ads'
-import Footer from './component/footer'
+import Footer from './component/Footer'
+
 import MatchInfo from './component/MatchInfo'
 import Navbar from './component/Navbar'
 import QuickLinks from './component/QuickLinks'
