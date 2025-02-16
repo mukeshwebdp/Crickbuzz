@@ -64,6 +64,10 @@
     }
     
 }
+.Live{
+    background-color: red !important;
+    font-weight: bold;
+}
 
 @media (max-width: 768px) {
     .card{

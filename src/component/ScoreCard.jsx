@@ -1,25 +1,47 @@
-import React from "react";
-import './style/ScoreCard.css'
-function ScoreCard() {
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./style/ScoreCard.css";
 
-  //  match info.
-  const [matches, setMatches] = React.useState([
-    {
-      id: 1,
-      title: "1st Test * India tour of Pakistan, 2024",
-      status: "Live",
-      session: "Day 2: 2nd Session - India trail by 360 runs",
-      indiaScore: "370/7",
-      pakistanScore: "Yet to Bet",
-      result: "Brisbane Heat Women won by 9 wkts"
-    },
+function ScoreCard() {
+  const [cardInfo, setCardInfo] = useState({});
+  const [run,setRun] = useState();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://crickbuzz-sever.onrender.com/api/cardInfoShow");
+        setCardInfo(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://crickbuzz-sever.onrender.com/api/getScore");
+        return setRun(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchData();
+    const interval = setInterval(fetchData, 8000); // 60 seconds
+    return () => clearInterval(interval); 
+  }, []);
+
+console.log(run?.data?.scores || 0)
+  const [matches, setMatches] = useState([
     {
       id: 2,
       title: "1st Test * India tour of Pakistan, 2024",
       status: "Live",
       session: "Day 2: 2nd Session - India trail by 360 runs",
       indiaScore: "370/7",
-      pakistanScore: "Yet to Bet",
+      pakistanScore: "Yet to Bat",
       result: "Brisbane Heat Women won by 9 wkts"
     },
     {
@@ -28,7 +50,7 @@ function ScoreCard() {
       status: "Live",
       session: "Day 2: 2nd Session - India trail by 360 runs",
       indiaScore: "370/7",
-      pakistanScore: "Yet to Bet",
+      pakistanScore: "Yet to Bat",
       result: "Brisbane Heat Women won by 9 wkts"
     },
     {
@@ -37,7 +59,7 @@ function ScoreCard() {
       status: "Live",
       session: "Day 2: 2nd Session - India trail by 360 runs",
       indiaScore: "370/7",
-      pakistanScore: "Yet to Bet",
+      pakistanScore: "Yet to Bat",
       result: "Brisbane Heat Women won by 9 wkts"
     },
     {
@@ -46,7 +68,7 @@ function ScoreCard() {
       status: "Live",
       session: "Day 2: 2nd Session - India trail by 360 runs",
       indiaScore: "370/7",
-      pakistanScore: "Yet to Bet",
+      pakistanScore: "Yet to Bat",
       result: "Brisbane Heat Women won by 9 wkts"
     },
     {
@@ -55,7 +77,7 @@ function ScoreCard() {
       status: "Live",
       session: "Day 2: 2nd Session - India trail by 360 runs",
       indiaScore: "370/7",
-      pakistanScore: "Yet to Bet",
+      pakistanScore: "Yet to Bat",
       result: "Brisbane Heat Women won by 9 wkts"
     },
   ]);
@@ -63,6 +85,27 @@ function ScoreCard() {
   return (
     <>
       <div className="score-card slider">
+        <div className="card">
+          <div className="box-1">
+            <p>{cardInfo?.data?.session}</p>
+            <label className={cardInfo?.data?.status}>Live</label>
+          </div>
+          <h4>{cardInfo?.data?.title}</h4>
+          <div className="flag">
+            <div className="india">
+              <img src={cardInfo?.data?.img1} alt="india" />
+              <p>{cardInfo?.data?.country1}</p>
+              <p className="number">{`${run?.data?.scores || 0}/${run?.data?.wickets || 0}`}</p>
+            </div>
+            <div className="pakistan">
+              <img src={cardInfo?.data?.img2} alt={cardInfo?.data?.img2} />
+              <p>{cardInfo?.data?.country2}</p>
+              <p className="number">Yet to Bat</p>
+            </div>
+          </div>
+          <p className="red">Brisbane Heat Women won by 9 wkts</p>
+        </div>
+
         {matches.map((match) => (
           <div className="card" key={match.id}>
             <div className="box-1">
