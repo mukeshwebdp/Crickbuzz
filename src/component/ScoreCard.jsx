@@ -94,7 +94,7 @@ console.log(run?.data || 0)
             <div className="india">
               <img src={cardInfo?.data?.img1} alt="india" />
               <p>{cardInfo?.data?.country1}</p>
-              <p className="number">{`${run?.data || 0}`}</p>
+              <p className="number">{`${run?.data || 0}`}</p> // 20s after auto update
             </div>
             <div className="pakistan">
               <img src={cardInfo?.data?.img2} alt={cardInfo?.data?.img2} />
