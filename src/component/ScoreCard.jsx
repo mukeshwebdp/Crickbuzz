@@ -21,7 +21,7 @@ function ScoreCard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://crickbuzz-sever.onrender.com/api/getScore");
+        const response = await axios.get("https://crickbuzz-sever.onrender.com/api/score");
         return setRun(response.data);
       } catch (err) {
         console.log(err);
@@ -33,7 +33,6 @@ function ScoreCard() {
     return () => clearInterval(interval); 
   }, []);
 
-console.log(run?.data?.scores || 0)
   const [matches, setMatches] = useState([
     {
       id: 2,
@@ -81,7 +80,7 @@ console.log(run?.data?.scores || 0)
       result: "Brisbane Heat Women won by 9 wkts"
     },
   ]);
-
+console.log(run?.data || 0)
   return (
     <>
       <div className="score-card slider">
@@ -95,7 +94,7 @@ console.log(run?.data?.scores || 0)
             <div className="india">
               <img src={cardInfo?.data?.img1} alt="india" />
               <p>{cardInfo?.data?.country1}</p>
-              <p className="number">{`${run?.data?.scores || 0}/${run?.data?.wickets || 0}`}</p>
+              <p className="number">{`${run?.data || 0}`}</p>
             </div>
             <div className="pakistan">
               <img src={cardInfo?.data?.img2} alt={cardInfo?.data?.img2} />
